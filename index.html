@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MVP Entwicklung Deutschland | SaaS in 4 Wochen | Festpreis ab €8.000</title>
-    <meta name="description" content="Professionelle SaaS-MVP-Entwicklung in 2-6 Wochen. Ruby on Rails, Festpreis, 100% Code-Ownership. KI-beschleunigt mit 15+ Jahren Erfahrung.">
+    <meta name="description" content="Schnell starten: Professionelle MVP-Entwicklung in 2-6 Wochen. Ruby on Rails, Festpreis ab €8.000, 100% Code-Ownership. KI-beschleunigt mit 15+ Jahren Erfahrung.">
+    <meta name="keywords" content="MVP Entwicklung, SaaS MVP Deutschland, Rails MVP Festpreis, Ruby on Rails Entwicklung, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland">
     <meta property="og:title" content="Dein SaaS-MVP in 4 Wochen | mvp-development.de">
-    <meta property="og:description" content="KI-beschleunigte Rails-Entwicklung. Festpreis ab €8.000. Von der Idee zum Launch in Wochen statt Monaten.">
+    <meta property="og:description" content="Schnell starten: KI-beschleunigte Rails-Entwicklung. Festpreis ab €8.000. Von der Idee zum Launch in Wochen statt Monaten.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mvp-development.de">
+    <meta property="og:site_name" content="mvp-development.de">
+
+    <!-- Hreflang for service differentiation -->
+    <link rel="alternate" hreflang="de" href="https://mvp-development.de/">
+    <link rel="canonical" href="https://mvp-development.de/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +22,91 @@
 
     <!-- Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="f2e452a7-c150-45b0-ba3e-4e5ebc4a6a7d"></script>
+
+    <!-- Structured Data for MVP Development Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "MVP Entwicklung",
+      "description": "Schnell starten: Von der Idee zur Produktion in 2-6 Wochen. Fester Umfang, fester Preis. Produktionsreife Rails-App mit Authentifizierung, Datenbank, Deployment und Kernfunktionen.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "mvp-development.de",
+        "url": "https://mvp-development.de",
+        "logo": "https://mvp-development.de/logo.png",
+        "priceRange": "€€€",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Deutschland"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Henning Thies",
+          "jobTitle": "Senior Rails-Entwickler",
+          "knowsAbout": ["Ruby on Rails", "MVP Entwicklung", "SaaS Entwicklung", "KI-gestützte Entwicklung"]
+        }
+      },
+      "serviceType": "MVP-Entwicklung",
+      "areaServed": ["Deutschland", "Europa", "Weltweit"],
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "8000",
+          "priceCurrency": "EUR",
+          "minPrice": "8000",
+          "description": "Festpreis für MVP-Entwicklung"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "MVP-Entwicklung Features",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rails 8 Anwendung",
+              "description": "Produktionsreife Ruby on Rails 8 Anwendung"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "User Authentication",
+              "description": "Komplette Authentifizierung mit Rollen-System"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payment Integration",
+              "description": "Stripe Payment-Integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Admin Panel",
+              "description": "Admin-Panel für Verwaltung"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Deployment",
+              "description": "Kamal Deployment-Setup mit SSL"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -719,6 +811,66 @@
             color: var(--text-muted);
         }
 
+        /* More Services */
+        .more-services {
+            background: var(--dark-light);
+            padding: 6rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .more-services-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .more-services-text h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .more-services-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .more-services-list {
+            list-style: none;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .more-services-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .more-services-list li:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .more-services-list svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .more-services-list strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
         /* Final CTA */
         .final-cta {
             text-align: center;
@@ -816,10 +968,10 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span></span>
-                    Launch-Angebot: Ab €4.800 (40% Rabatt)
+                    Phase 1: Schnell Starten - Launch-Angebot: Ab €4.800 (40% Rabatt)
                 </div>
-                <h1>Dein SaaS-MVP in <span class="gradient">4 Wochen.</span><br>Festpreis. Produktionsreif.</h1>
-                <p class="hero-sub">KI-beschleunigte Rails-Entwicklung mit 15+ Jahren Erfahrung. Kein No-Code, sondern echte Software, die skaliert.</p>
+                <h1><span class="gradient">Schnell starten:</span><br>Dein SaaS-MVP in 4 Wochen.<br>Festpreis. Produktionsreif.</h1>
+                <p class="hero-sub">Von der Idee zur Produktion in 2-6 Wochen. KI-beschleunigte Rails-Entwicklung mit 15+ Jahren Erfahrung. Kein No-Code, sondern echte Software, die skaliert.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary">
                         Kostenloses Erstgespräch buchen
@@ -875,8 +1027,8 @@
         <div class="container">
             <div class="solution-content">
                 <div class="solution-text fade-in">
-                    <h2>Die Alternative: Senior Rails + KI = 10x Geschwindigkeit</h2>
-                    <p class="solution-intro">Ich bin Full-Stack Rails-Entwickler mit 15+ Jahren Erfahrung. Mit KI-Tools automatisiere ich 70-90% der Routine-Arbeit. Die gesparte Zeit investiere ich in Architektur, Edge Cases und Produktionsreife.</p>
+                    <h2>Schnell starten: Senior Rails + KI = 10x Geschwindigkeit</h2>
+                    <p class="solution-intro">Phase 1 Ihres SaaS-Erfolgs: Von der Idee zur Produktion in 2-6 Wochen. Ich bin Full-Stack Rails-Entwickler mit 15+ Jahren Erfahrung. Mit KI-Tools automatisiere ich 70-90% der Routine-Arbeit. Die gesparte Zeit investiere ich in Architektur, Edge Cases und Produktionsreife.</p>
                     <ul class="solution-list">
                         <li>
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
@@ -920,23 +1072,27 @@
     <section class="proof">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Beweis: Kunden-Cockpit</h2>
-                <p>Vollständiges B2B-SaaS in 19 Tagen</p>
+                <h2>Schnell starten in der Praxis: Kunden-Cockpit</h2>
+                <p>Von der Idee zur Produktion in 2 Wochen</p>
             </div>
             <div class="proof-card fade-in">
                 <div class="proof-header">
                     <h3>Kunden-Cockpit</h3>
-                    <p>B2B-Projektmanagement-Plattform für Agenturen und Freelancer. Multi-Tenant-Architektur, Rollen-System, Echtzeit-Updates.</p>
+                    <p>Lead-Management und Projekt-CRM für Agenturen. KI-gestützte Briefings, Angebotserstellung, Kundenportal und Meilenstein-Tracking.</p>
                 </div>
                 <div class="proof-body">
                     <div class="proof-stats">
                         <div class="proof-stat">
-                            <div class="proof-stat-value">19</div>
-                            <div class="proof-stat-label">Tage Entwicklung</div>
+                            <div class="proof-stat-value">2</div>
+                            <div class="proof-stat-label">Wochen Entwicklung</div>
                         </div>
                         <div class="proof-stat">
                             <div class="proof-stat-value">Live</div>
                             <div class="proof-stat-label">In Produktion</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">12</div>
+                            <div class="proof-stat-label">Kern-Module</div>
                         </div>
                     </div>
                     <a href="https://kunden-cockpit.de" class="proof-cta">
@@ -1104,7 +1260,7 @@
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Der Code gehört dir zu 100%. Du kannst ihn selbst weiterentwickeln, jemand anderen beauftragen, oder mit mir weiterarbeiten. Ich biete Wartungs-Retainer für laufende Weiterentwicklung an.</p>
+                        <p>Der Code gehört dir zu 100%. Du kannst ihn selbst weiterentwickeln, jemand anderen beauftragen, oder mit mir weiterarbeiten. Das MVP ist Phase 1 ("Schnell Starten"). Für kontinuierliche Weiterentwicklung biete ich monatliche Retainer an (Phase 2: "Schnell Bleiben"). Mehr Infos auf <a href="https://ai-on-rails.com/de/" style="color: var(--primary-light); text-decoration: underline;">ai-on-rails.com/de</a>.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1141,13 +1297,45 @@
         </div>
     </section>
 
+    <!-- More Services Section -->
+    <section class="more-services">
+        <div class="container">
+            <div class="more-services-content">
+                <div class="more-services-text">
+                    <h2>Mehr als nur MVP?</h2>
+                    <p>MVP-Development.de fokussiert sich auf <strong>Phase 1: Schnell Starten</strong> - Ihre produktionsreife Anwendung in 2-6 Wochen.</p>
+                    <p>Sie brauchen Wartung, Weiterentwicklung oder Legacy-Modernisierung? Entdecken Sie das vollständige Leistungsportfolio bei AI on Rails:</p>
+                    <ul class="more-services-list">
+                        <li>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <div>
+                                <strong>Schnell Bleiben:</strong> Monatlicher Retainer für kontinuierliche Weiterentwicklung, neue Features und Optimierungen
+                            </div>
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <div>
+                                <strong>Schnell Werden:</strong> Legacy-Rails-Rettung, Rails-Upgrades und Modernisierung bestehender Anwendungen
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="https://ai-on-rails.com/de/" class="btn-secondary">
+                        Alle Services bei AI on Rails ansehen
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
-                Powered by <a href="https://ai-on-rails.com">ai-on-rails.com</a> | hello@ai-on-rails.com
+                Powered by <a href="https://ai-on-rails.com/de/">ai-on-rails.com</a> | hello@ai-on-rails.com
             </div>
             <div class="footer-links">
+                <a href="https://ai-on-rails.com/de/">Alle Services</a>
                 <a href="/impressum.html">Impressum</a>
                 <a href="/datenschutz.html">Datenschutz</a>
             </div>
