@@ -7,32 +7,35 @@
     <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="f2e452a7-c150-45b0-ba3e-4e5ebc4a6a7d"></script>
 
     <style>
         :root {
-            --primary: #6366F1;
-            --primary-light: #818CF8;
-            --dark: #0A0A0F;
-            --dark-light: #18181B;
-            --text: #FAFAFA;
-            --text-muted: #A1A1AA;
-            --border: #27272A;
-            --gradient-1: linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7);
+            --color-bg: #1C1917;
+            --color-surface: #231F1C;
+            --color-border: #3D3530;
+            --color-text: #FAF7F5;
+            --color-text-muted: #A8A29E;
+            --color-ruby: #DC143C;
+            --color-ruby-glow: rgba(220, 20, 60, 0.25);
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-body: 'Source Sans 3', sans-serif;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--dark);
-            color: var(--text);
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
             line-height: 1.8;
         }
         h1, h2, h3 {
-            font-family: 'Space Grotesk', system-ui, sans-serif;
-            font-weight: 700;
+            font-family: var(--font-display);
+            font-weight: 400;
+            letter-spacing: 0.02em;
         }
         .header {
             padding: 1.5rem 0;
@@ -49,22 +52,22 @@
             align-items: center;
         }
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            color: var(--color-text);
             text-decoration: none;
         }
         .back-link {
-            color: var(--text-muted);
+            font-family: var(--font-mono);
+            color: var(--color-text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
         }
-        .back-link:hover { color: var(--text); }
+        .back-link:hover {
+            color: var(--color-ruby);
+        }
         main {
             padding: 4rem 0;
         }
@@ -76,24 +79,34 @@
             font-size: 1.25rem;
             margin-top: 2rem;
             margin-bottom: 0.75rem;
-            color: var(--primary-light);
+            color: var(--color-ruby);
         }
         p, address {
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             margin-bottom: 1rem;
             font-style: normal;
         }
         a {
-            color: var(--primary-light);
+            color: var(--color-ruby);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
-        a:hover { text-decoration: underline; }
+        a:hover {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
         .footer {
             padding: 2rem 0;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--color-border);
             text-align: center;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             font-size: 0.875rem;
+        }
+        .footer a {
+            color: var(--color-ruby);
+        }
+        .footer a:hover {
+            color: var(--color-text);
         }
     </style>
 </head>
