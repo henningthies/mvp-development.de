@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mockup-brutal.html
+
+Sitemap: https://mvp-development.de/sitemap.xml
