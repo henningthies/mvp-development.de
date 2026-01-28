@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Entwicklung Deutschland | SaaS in 4 Wochen | Festpreis ab €8.000</title>
+    <meta name="description" content="Schnell starten: Professionelle MVP-Entwicklung in 2-6 Wochen. Ruby on Rails, Festpreis ab €8.000, 100% Code-Ownership. KI-beschleunigt mit 15+ Jahren Erfahrung.">
+    <style>
+        /* Brutal Simple Design System */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --red: #FF0000;
+            --gray: #999999;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 7rem);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 2px solid var(--black);
+            padding: 1.5rem 0;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-cta {
+            border: 2px solid var(--black);
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.15s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Section spacing */
+        section {
+            padding: 8rem 0;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 2px solid var(--red);
+            padding: 0.5rem 1rem;
+            margin-bottom: 3rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--red);
+        }
+
+        .hero h1 .highlight {
+            color: var(--red);
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black);
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.15s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--black);
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.15s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .trust-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 2rem;
+            justify-content: start;
+        }
+
+        .trust-list li {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .trust-list li::before {
+            content: "✓";
+            margin-right: 0.5rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .trust-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Problem Section */
+        .problem {
+            border-top: 2px solid var(--black);
+            border-bottom: 2px solid var(--black);
+        }
+
+        .problems-list {
+            list-style: none;
+            display: grid;
+            gap: 4rem;
+        }
+
+        .problems-list li {
+            border-left: 4px solid var(--black);
+            padding-left: 2rem;
+        }
+
+        .problems-list h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .problems-list p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Solution Section */
+        .solution-intro {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        .solution-list {
+            list-style: none;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .solution-list li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .solution-list li::before {
+            content: "→";
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .solution-list strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            margin-top: 4rem;
+            padding: 3rem;
+            border: 2px solid var(--black);
+        }
+
+        .tech-stack h4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-list li {
+            font-weight: 500;
+            padding: 0.75rem;
+            border: 1px solid var(--black);
+            text-align: center;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .pricing-card {
+            border: 2px solid var(--white);
+            padding: 4rem 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing h3 {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+            font-size: clamp(4rem, 10vw, 7rem);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .price-launch {
+            display: inline-block;
+            color: var(--red);
+            border: 2px solid var(--red);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-section {
+            margin-top: 3rem;
+        }
+
+        .pricing-section h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .pricing-list li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 1rem;
+        }
+
+        .pricing-list.included li::before {
+            content: "✓";
+            font-weight: 700;
+        }
+
+        .pricing-list.excluded li::before {
+            content: "✕";
+            font-weight: 700;
+            color: var(--gray);
+        }
+
+        .pricing-list.excluded li {
+            color: var(--gray);
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            margin-top: 3rem;
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--white);
+            padding: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.15s ease;
+        }
+
+        .pricing-cta:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Process */
+        .process {
+            border-top: 2px solid var(--black);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .step-num {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.1;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            border-top: 2px solid var(--black);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3rem;
+        }
+
+        th, td {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--black);
+        }
+
+        th {
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tbody tr:last-child {
+            background: var(--black);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 2px solid var(--black);
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        /* FAQ */
+        .faq {
+            border-top: 2px solid var(--black);
+        }
+
+        .faq-list {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--black);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 2rem 0;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .faq-icon {
+            font-size: 2rem;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .faq-answer a {
+            text-decoration: underline;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 12rem 0;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        /* More Services */
+        .more-services {
+            background: var(--black);
+            color: var(--white);
+            padding: 6rem 0;
+        }
+
+        .more-services h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .more-services p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .more-services-list {
+            list-style: none;
+            margin: 3rem 0;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .more-services-list li {
+            border-left: 4px solid var(--white);
+            padding-left: 2rem;
+        }
+
+        .more-services-list strong {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .more-services .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .more-services .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 2px solid var(--black);
+            padding: 3rem 0;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            font-size: 0.875rem;
+        }
+
+        .footer-brand a {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Scroll reveal (optional subtle effect) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">MVP-DEVELOPMENT.DE</div>
+            <a href="#contact" class="header-cta">Erstgespräch</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">LAUNCH-ANGEBOT: AB €4.800</div>
+            <h1>
+                <span class="highlight">Schnell starten:</span><br>
+                Dein SaaS-MVP<br>
+                in 4 Wochen.<br>
+                Festpreis.<br>
+                Produktionsreif.
+            </h1>
+            <p class="hero-sub">
+                Von der Idee zur Produktion in 2-6 Wochen. KI-beschleunigte Rails-Entwicklung mit 15+ Jahren Erfahrung. Kein No-Code, sondern echte Software, die skaliert.
+            </p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-primary">Erstgespräch buchen</a>
+                <a href="https://kunden-cockpit.de" class="btn-secondary">Beispiel ansehen</a>
+            </div>
+            <ul class="trust-list">
+                <li>15+ Jahre Rails</li>
+                <li>Festpreis-Garantie</li>
+                <li>100% Code-Ownership</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="reveal">Das Problem mit<br>traditioneller<br>MVP-Entwicklung</h2>
+            <ul class="problems-list">
+                <li class="reveal">
+                    <h3>Agenturen: zu teuer, zu langsam</h3>
+                    <p>€80.000-150.000 Budget. 4-6 Monate Wartezeit. Und am Ende: eine Version 0.1, die noch nicht am Markt validiert ist.</p>
+                </li>
+                <li class="reveal">
+                    <h3>No-Code: schnell am Limit</h3>
+                    <p>Bubble, Webflow, Glide - klingt verlockend. Bis du merkst: Vendor Lock-in, Performance-Probleme, keine echte Skalierbarkeit.</p>
+                </li>
+                <li class="reveal">
+                    <h3>Freelancer & Offshore: Glücksspiel</h3>
+                    <p>Wer baut wirklich? Ein Junior, der auf deinem Projekt lernt? Oder Offshore-Teams mit Kommunikationsproblemen und Code, den du nicht verstehst?</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="reveal">Senior Rails + KI =<br>10x Geschwindigkeit</h2>
+            <p class="solution-intro reveal">
+                Phase 1 Ihres SaaS-Erfolgs: Von der Idee zur Produktion in 2-6 Wochen. Ich bin Full-Stack Rails-Entwickler mit 15+ Jahren Erfahrung. Mit KI-Tools automatisiere ich 70-90% der Routine-Arbeit. Die gesparte Zeit investiere ich in Architektur, Edge Cases und Produktionsreife.
+            </p>
+            <ul class="solution-list">
+                <li class="reveal">
+                    <div>
+                        <strong>Echte Software</strong>
+                        Ruby on Rails 8 - der Stack von Shopify, GitHub, Basecamp
+                    </div>
+                </li>
+                <li class="reveal">
+                    <div>
+                        <strong>Volle Kontrolle</strong>
+                        100% Code-Ownership, kein Vendor Lock-in
+                    </div>
+                </li>
+                <li class="reveal">
+                    <div>
+                        <strong>Festpreis</strong>
+                        Du weißt vorher, was es kostet - keine Überraschungen
+                    </div>
+                </li>
+                <li class="reveal">
+                    <div>
+                        <strong>Schnell</strong>
+                        2-6 Wochen statt 4-6 Monate
+                    </div>
+                </li>
+                <li class="reveal">
+                    <div>
+                        <strong>Senior-Qualität</strong>
+                        15+ Jahre Erfahrung, keine Lernkurve
+                    </div>
+                </li>
+            </ul>
+
+            <div class="tech-stack reveal">
+                <h4>Tech Stack</h4>
+                <ul class="tech-list">
+                    <li>Rails 8</li>
+                    <li>Hotwire</li>
+                    <li>Tailwind CSS</li>
+                    <li>SQLite</li>
+                    <li>Kamal Deploy</li>
+                    <li>Stripe</li>
+                    <li>ViewComponents</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-card reveal">
+                <h3>MVP-Entwicklung</h3>
+                <div class="price-amount">€8.000</div>
+                <div class="price-launch">LAUNCH: AB €4.800</div>
+
+                <div class="pricing-section">
+                    <h4>Enthalten</h4>
+                    <ul class="pricing-list included">
+                        <li>Produktionsreife Rails 8 Anwendung</li>
+                        <li>User-Authentication mit Rollen</li>
+                        <li>Payment-Integration (Stripe)</li>
+                        <li>Admin-Panel</li>
+                        <li>Kamal Deployment + SSL</li>
+                        <li>100% Code-Ownership</li>
+                        <li>2 Wochen Bug-Support</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-section">
+                    <h4>Nicht enthalten</h4>
+                    <ul class="pricing-list excluded">
+                        <li>Hosting-Kosten</li>
+                        <li>Content-Erstellung</li>
+                        <li>Mobile Apps</li>
+                    </ul>
+                </div>
+
+                <a href="#contact" class="pricing-cta">Scope-Gespräch buchen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="reveal">Von der Idee<br>zum Launch</h2>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-num">1</div>
+                    <h3>Erstgespräch</h3>
+                    <p>30 Min kostenlos. Du erklärst deine Idee, ich schätze Komplexität ein.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">2</div>
+                    <h3>Angebot</h3>
+                    <p>Innerhalb 48h: Festpreis-Angebot mit Feature-Liste und Zeitplan.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">3</div>
+                    <h3>Entwicklung</h3>
+                    <p>50% Anzahlung, dann 2-6 Wochen mit regelmäßigen Updates.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-num">4</div>
+                    <h3>Übergabe</h3>
+                    <p>Code, Deployment, Docs. 2 Wochen Bug-Support inklusive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="reveal">Warum<br>mvp-development.de?</h2>
+            <table class="reveal">
+                <thead>
+                    <tr>
+                        <th>Alternative</th>
+                        <th>Kosten</th>
+                        <th>Timeline</th>
+                        <th>Problem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Traditionelle Agentur</td>
+                        <td>€50K-150K</td>
+                        <td>3-6 Monate</td>
+                        <td>Zu teuer, zu langsam</td>
+                    </tr>
+                    <tr>
+                        <td>Freelancer (Stunde)</td>
+                        <td>€40K-80K</td>
+                        <td>3-4 Monate</td>
+                        <td>Ungewisses Ende</td>
+                    </tr>
+                    <tr>
+                        <td>Offshore-Team</td>
+                        <td>€15K-40K</td>
+                        <td>2-4 Monate</td>
+                        <td>Kommunikation</td>
+                    </tr>
+                    <tr>
+                        <td>No-Code Agentur</td>
+                        <td>€5K-15K</td>
+                        <td>2-4 Wochen</td>
+                        <td>Nicht skalierbar</td>
+                    </tr>
+                    <tr>
+                        <td>mvp-development.de</td>
+                        <td>Ab €8K</td>
+                        <td>2-6 Wochen</td>
+                        <td>Senior + KI</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="reveal">Häufige Fragen</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Was genau ist ein MVP?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ein Minimum Viable Product ist die erste funktionsfähige Version deiner Software. Genug Features, um zu launchen und echtes Feedback zu sammeln - ohne monatelange Entwicklung für Features, die vielleicht niemand braucht.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Warum Rails statt No-Code?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No-Code ist gut für Prototypen. Aber sobald du skalieren, integrieren oder customizen willst, stößt du an Grenzen. Rails ist der bewährte Stack für SaaS - verwendet von Shopify, GitHub, Basecamp.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Was passiert nach der Übergabe?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Der Code gehört dir zu 100%. Du kannst ihn selbst weiterentwickeln, jemand anderen beauftragen, oder mit mir weiterarbeiten. Das MVP ist Phase 1 ("Schnell Starten"). Für kontinuierliche Weiterentwicklung biete ich monatliche Retainer an (Phase 2: "Schnell Bleiben"). Mehr Infos auf <a href="https://ai-on-rails.com/de/">ai-on-rails.com/de</a>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Wie funktioniert "KI-beschleunigte Entwicklung"?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>KI-Tools wie Claude Code übernehmen 70-90% der repetitiven Coding-Arbeit: Authentication, Payment-Integration, Admin-Panels. Ich fokussiere mich auf Architektur, Edge Cases und Produktionsreife.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Was wenn mein Projekt komplexer ist?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kein Problem. Wir scopen dein Projekt gemeinsam im Erstgespräch. Du erhältst ein individuelles Festpreis-Angebot basierend auf dem tatsächlichen Umfang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2 class="reveal">Bereit dein<br>MVP zu bauen?</h2>
+            <p class="reveal">30 Minuten kostenlos. Keine Verpflichtung.</p>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2q_ohNAY5sebgeN8pqafl4XGv3fPsZOfKchDjEfK4zv7ZVt7C-h-iyhmTVv-V2doR4uqX7J8wM" class="btn-primary reveal">Erstgespräch buchen</a>
+        </div>
+    </section>
+
+    <!-- More Services -->
+    <section class="more-services">
+        <div class="container">
+            <h2 class="reveal">Mehr als nur MVP?</h2>
+            <p class="reveal">
+                MVP-Development.de fokussiert sich auf Phase 1: Schnell Starten - Ihre produktionsreife Anwendung in 2-6 Wochen.
+            </p>
+            <p class="reveal">
+                Sie brauchen Wartung, Weiterentwicklung oder Legacy-Modernisierung? Entdecken Sie das vollständige Leistungsportfolio bei AI on Rails:
+            </p>
+            <ul class="more-services-list">
+                <li class="reveal">
+                    <strong>Schnell Bleiben</strong>
+                    Monatlicher Retainer für kontinuierliche Weiterentwicklung, neue Features und Optimierungen
+                </li>
+                <li class="reveal">
+                    <strong>Schnell Werden</strong>
+                    Legacy-Rails-Rettung, Rails-Upgrades und Modernisierung bestehender Anwendungen
+                </li>
+            </ul>
+            <a href="https://ai-on-rails.com/de/" class="btn-secondary reveal">Alle Services ansehen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                Powered by <a href="https://ai-on-rails.com/de/">ai-on-rails.com</a> | hello@ai-on-rails.com
+            </div>
+            <div class="footer-links">
+                <a href="https://ai-on-rails.com/de/">Alle Services</a>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
